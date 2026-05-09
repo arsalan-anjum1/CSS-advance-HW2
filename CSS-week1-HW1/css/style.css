@@ -7,9 +7,21 @@ body {
 header {
     background-color: #34495e;
 }
+
+/* Updated Nav: inline-block and 80% width */
 nav {
     background-color: #2c3e50;
+    display: inline-block;
+    width: 80%;
 }
+
+/* Descendant selector for nav image: 10% width and positioning */
+nav img {
+    width: 10% !important; /* Forces override of inline attributes */
+    position: relative;
+    top: 20px;
+}
+
 main {
     background-color: #ffffff;
     font-size: 18px;
@@ -19,10 +31,13 @@ footer {
     background-color: #ecf0f1;
     padding: 10px;
 }
-li {
+
+/* Requirement: Comment out existing styling for li element */
+/* li {
     display: inline-block;
     width: 120px;
-}
+} */
+
 h1 {
     text-align: center;
     font-family: Georgia, Times, serif;
@@ -31,4 +46,25 @@ h1 {
 p {
     line-height: 1.5;
     color: #333333;
+}
+
+/* CSS Grid Class */
+.grid {
+    display: grid;
+    grid-template-columns: 40% 40%;
+    justify-content: center;
+    align-items: start;
+    row-gap: 20px;
+}
+
+/* Grid Image scaling: 100% of the column */
+.grid img {
+    width: 100%;
+}
+
+/* CSS Flex Class */
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
