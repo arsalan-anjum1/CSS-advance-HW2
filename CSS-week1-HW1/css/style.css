@@ -1,77 +1,135 @@
+html {
+    font-size: 100%;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
     margin: 0;
     padding: 0;
+    line-height: 1.5;
+}
+
+:focus-visible {
+    outline: 3px solid #005fcc;
+    outline-offset: 2px;
 }
 
 header {
-    /* FIXED: Slightly darker blue to make white text pop more */
-    background-color: #243447; 
+    background-color: #243447;
+    padding: 1rem 0;
 }
-
-/* Updated Nav: inline-block and 80% width */
-nav {
-    /* FIXED: Darker shade to ensure link readability */
-    background-color: #1a252f; 
-    display: inline-block;
-    width: 80%;
-}
-
-/* Descendant selector for nav image: 10% width and positioning */
-nav img {
-    width: 10% !important; 
-    position: relative;
-    top: 20px;
-}
-
-main {
-    background-color: #ffffff;
-    font-size: 18px;
-    padding: 20px;
-}
-
-footer {
-    /* FIXED: Darker grey background to contrast against the page body */
-    background-color: #d1d8db; 
-    padding: 10px;
-}
-
-/* Requirement: Comment out existing styling for li element */
-/* li {
-    display: inline-block;
-    width: 120px;
-} */
 
 h1 {
     text-align: center;
     font-family: Georgia, Times, serif;
     color: #ffffff;
+    margin: 0;
+    font-size: 2rem;
+}
+
+nav {
+    background-color: #1a252f;
+    display: inline-block;
+    width: 80%;
+    vertical-align: middle;
+}
+
+nav img {
+    width: 10%; 
+    height: auto;
+    vertical-align: middle;
+    padding: 0.5rem 0;
+}
+
+nav ul {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    background-color: #ffffff;
+    font-size: 1.125rem;
+    padding: 1.25rem;
 }
 
 p {
     line-height: 1.5;
-    /* FIXED: Darker text color (#333 can sometimes fail, #1a1a1a is safer) */
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+footer {
+    background-color: #d1d8db; 
+    padding: 1.5rem;
     color: #1a1a1a; 
 }
 
-/* CSS Grid Class */
+/* li {
+    display: inline-block;
+    width: 7.5rem;
+} */
+
 .grid {
     display: grid;
-    grid-template-columns: 40% 40%;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     justify-content: center;
     align-items: start;
-    row-gap: 20px;
+    gap: 1.25rem;
 }
 
-/* Grid Image scaling: 100% of the column */
 .grid img {
     width: 100%;
+    height: auto;
+    display: block;
 }
 
-/* CSS Flex Class */
 .flex {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    gap: 1.5rem;
+    padding: 1rem 0;
+}
+
+.flex img {
+    max-width: 100%;
+    height: auto;
+}
+
+.sr-only, a[href="#main"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+a[href="#main"]:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    background: #ffffff;
+    color: #243447;
+    clip: auto;
+    border: 2px solid #243447;
 }
